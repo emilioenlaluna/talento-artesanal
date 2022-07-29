@@ -31,6 +31,10 @@ Route::get('/Categorias/{id}/Cursos', 'App\Http\Controllers\CursosController@cur
 
 Route::get('/DatalleCurso/{id}', 'App\Http\Controllers\CursosController@detalles')->name("cursos.detalles");
 
+Route::get('/Lecciones/{id}', 'App\Http\Controllers\ContenidoCursosController@leccion')->name("cursos.leccion");
+
+Route::get('/Material/{id}', 'App\Http\Controllers\ContenidoCursosController@material')->name("cursos.material");
+
 
 /* *******************************************
  * USUARIO VERIFICADO

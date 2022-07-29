@@ -1,9 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\Curso;
-use App\Models\Categoria;
 use Illuminate\Support\Facades\DB;
 
 
