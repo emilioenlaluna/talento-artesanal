@@ -63,7 +63,7 @@
         <div class="card-body">
             <form method="POST" action="{{route('maestros.leccion.guardarmaterial')}}">
                 @csrf
-                <input id="summernote" name="entra" style=".note-group-select-from-files {display: none;}">
+                <textarea id="summernote" name="entra" style=".note-group-select-from-files {display: none;}"></textarea>
                 <button type="submit" class="btn btn-primary">Crear</button>
             </form>
 
@@ -92,27 +92,6 @@
         @endforeach
     </div>
 </div>
-
-{{--<div class="container">--}}
-{{--    <h2 class="display-3">Lecciones del Curso</h2>--}}
-{{--    <div class="accordion" id="accordionPanelsStayOpenExample">--}}
-{{--        @foreach ($viewData["lecciones"] as $leccion)--}}
-{{--            <div class="card">--}}
-{{--                <div class="card-header">--}}
-{{--                    {{$leccion["NombreLeccion"]}}--}}
-{{--                </div>--}}
-{{--                <div class="card-body">--}}
-{{--                    <h5>{{$leccion["NombreLeccion"]}}</h5>--}}
-{{--                    <p>{{$leccion["FechaLeccion"]}}</p>--}}
-{{--                    <p>{{$leccion["Detalles"]}}</p>--}}
-{{--                    <a href="{{$leccion["idLeccion"]}}"></a>--}}
-{{--                    <button class="btn btn-cafe" >Ver Contenido Leccion</button>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <hr class="my-4">--}}
-{{--        @endforeach--}}
-{{--    </div>--}}
-{{--</div>--}}
 
 
 <hr class="my-4">

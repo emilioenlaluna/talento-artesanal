@@ -74,20 +74,20 @@ Route::middleware(['usuario'])->group(function () {
 
 Route::middleware(['admin', 'auth'])->group(function () {
 
-    Route::get('/admin', 'App\Http\Controllers\Maestro\Home\MaestroHomeController@dashboard')->name("maestro.home.dashboard");
+    Route::get('/admin', 'App\Http\Controllers\Admin\Home\MaestroHomeController@dashboard')->name("admin.home.dashboard");
 
-    Route::get('/admin/Cursos', 'App\Http\Controllers\Maestro\Cursos\MaestroCursosController@index')->name("maestro.cursos");
+    Route::get('/admin/Cursos', 'App\Http\Controllers\Admin\Cursos\MaestroCursosController@index')->name("admin.cursos");
 
-    Route::post('/admin/Cursos/Guardar', 'App\Http\Controllers\Maestro\Cursos\MaestroCursosController@guardar')->name("maestro.cursos.guardar");
+    Route::post('/admin/Cursos/Guardar', 'App\Http\Controllers\Admin\Cursos\MaestroCursosController@guardar')->name("admin.cursos.guardar");
 
-    Route::get('/admin/Cursos/Leccion/{id}', 'App\Http\Controllers\Maestro\Cursos\MaestroLeccionesController@leccion')->name("maestro.cursos.leccion");
+    Route::get('/admin/Cursos/Leccion/{id}', 'App\Http\Controllers\Admin\Cursos\MaestroLeccionesController@leccion')->name("admin.cursos.leccion");
 
-    Route::post('/admin/Cursos/Leccion/guardar', 'App\Http\Controllers\Maestro\Cursos\MaestroLeccionesController@guardarleccion')->name("maestro.guardarleccion");
+    Route::post('/admin/Cursos/Leccion/guardar', 'App\Http\Controllers\Admin\Cursos\MaestroLeccionesController@guardarleccion')->name("admin.guardarleccion");
 
 
-    Route::get('/admin/Cursos/Material/{id}', 'App\Http\Controllers\Maestro\Cursos\MaestroLeccionesController@material')->name("maestro.cursos.material");
+    Route::get('/admin/Cursos/Material/{id}', 'App\Http\Controllers\Admin\Cursos\MaestroLeccionesController@material')->name("admin.cursos.material");
 
-    Route::post('/admin/Cursos/Leccion/Guardar', 'App\Http\Controllers\Maestro\Cursos\MaestroLeccionesController@guardarmaterial')->name("maestros.leccion.guardarmaterial");
+    Route::post('/admin/Cursos/Leccion/Guardar', 'App\Http\Controllers\Admin\Cursos\MaestroLeccionesController@guardarmaterial')->name("admin.leccion.guardarmaterial");
 
 
 });
