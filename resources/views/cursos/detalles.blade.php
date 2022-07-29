@@ -37,6 +37,9 @@
                                         @admin
                                             <a href="{{ route('admin.cursos') }}">Ir a mis Cursos</a>
                                         @endadmin
+                                        @usuario
+                                        <a  class="btn btn-info" href="{{ route('usuario.inscribir',['id'=>$curso->idCurso])}}">Guardar en Mis Cursos</a>
+                                        @endusuario
                                     @endguest
 
                                     @if($errors->any())

@@ -28,16 +28,11 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a href="{{route('alumno.miscursos')}}" class="nav-link text-white">Mis Cursos</a>
+                        <a href="{{route('usuario.miscursos')}}" class="nav-link text-white">Mis Cursos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('cursos.categorias') }}">Categorias</a>
                     </li>
-                </ul>
-                <ul class="navbar-nav justyfy-content-end">
-                    @if(Auth::guard('alumno')->check())
-                        <a class="nav-link active" href="{!! url('/alumno/dashboard'); !!}">Alumno</a>
-                    @endif
                 </ul>
             </div>
         </div>
@@ -61,9 +56,8 @@
                         <div class="card-body">
                             <h5 class="card-title">{{$curso["NombreCurso"]}}</h5>
                             <h6 class="card-title">Profesor Juan Rodolfo Pérez</h6>
-                            <p class="card-text">{{$curso["FechaInicio"]}}</p>
-                            <p class="card-text">{{$curso["FechaFin"]}}</p>
-                            <a href="{{ route('cursos.detalles', ['id'=> $curso["idCurso"]]) }}"
+                            <p class="card-text">{{$curso["detalles"]}}</p>
+                            <a href="{{ route('cursos.leccion', ['id'=> $curso["idCurso"]]) }}"
                                class="btn btn-cafe">Ir a Curso</a>
                         </div>
                     </div>

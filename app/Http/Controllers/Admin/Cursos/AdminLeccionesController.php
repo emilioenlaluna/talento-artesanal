@@ -30,7 +30,7 @@ class AdminLeccionesController extends Controller
     {
         DB::table('leccion')->insert([
             'NombreLeccion' => $request->input('nombre'),
-            'FechaLeccion' => $request->input('fecha'),
+            'FechaLeccion' => now(),
             'Detalles' => $request->input('detalles'),
             'Curso_idCurso' => $request->input('curso')
         ]);

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Alumno\Home;
+namespace App\Http\Controllers\Usuario\Home;
 
 use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 
-class AlumnoHomeController extends Controller
+class UsuarioHomeController extends Controller
 {
 
     /**
@@ -20,7 +20,7 @@ class AlumnoHomeController extends Controller
     {
         $viewData = [];
         $viewData["title"] = "Alumno -My Learning Coach";
-        return view('alumno.dashboard')->with("viewData", $viewData);
+        return view('usuario.dashboard')->with("viewData", $viewData);
     }
 
     public function miscursos()
@@ -29,12 +29,12 @@ class AlumnoHomeController extends Controller
         $viewData["title"] = "Alumno -My Learning Coach";
         $cursos = DB::table('inscripcion')
             ->join('cursos', 'inscripcion.Curso_idCurso', '=', 'cursos.idCurso')
-            ->select('cursos.NombreCurso', 'cursos.FechaInicio', 'cursos.FechaFin', 'cursos.idCurso','cursos.imagenUrl')
+            ->select('cursos.NombreCurso', 'cursos.detalles', 'cursos.idCurso','cursos.imagenUrl')
             ->where('inscripcion.users_id', Auth::id())
             ->get();
         $viewData["cursosAlumno"] = json_decode($cursos, true);
 
-        return view('alumno.miscursos')->with("viewData", $viewData);
+        return view('usuario.miscursos')->with("viewData", $viewData);
     }
 
 

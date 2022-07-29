@@ -55,25 +55,7 @@
 <div style="padding-top: 80px;"></div>
 
 
-<div class="container">
-    <div class="card mb-4">
-        <div class="card-header">
-            Crear Material
-        </div>
-        <div class="card-body">
-            <form method="POST" action="{{route('admin.leccion.guardarmaterial')}}" enctype="multipart/form-data">
-                @csrf
-                <input type="hidden" name="idleccion" value="{{ $viewData["idleccion"] }}">
-                <label class="form-label">Titulo</label>
-                <input type="text" class="form-control" name="titulo">
-                <br>
-                <textarea class="form-control" id="summernote" name="contenido" style=".note-group-select-from-files {display: none;}"></textarea>
-                <br><button type="submit" class="btn btn-primary">Crear</button>
-            </form>
 
-        </div>
-    </div>
-</div>
 
 
 <div class="container">
@@ -98,6 +80,26 @@
 
 <hr class="my-4">
 
+<div class="container">
+    <div class="card mb-4">
+        <div class="card-header">
+            Crear Material
+        </div>
+        <div class="card-body">
+            <form method="POST" action="{{route('admin.leccion.guardarmaterial')}}" enctype="multipart/form-data">
+                @csrf
+                <input type="hidden" name="idleccion" value="{{ $viewData["idleccion"] }}">
+                <label class="form-label">Titulo</label>
+                <input type="text" class="form-control" name="titulo">
+                <br>
+                <textarea class="form-control" id="summernote" name="contenido" style=".note-group-select-from-files {display: none;}"></textarea>
+                <br><button type="submit" class="btn btn-primary">Crear</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
 
 <!-- pie -->
 <div id="piecito">
@@ -107,7 +109,7 @@
 
 <script>
     $('#summernote').summernote({
-        placeholder: 'Hello stand alone ui',
+        placeholder: 'Escribe el contenido Aquí',
         tabsize: 2,
         height: 120,
         toolbar: [

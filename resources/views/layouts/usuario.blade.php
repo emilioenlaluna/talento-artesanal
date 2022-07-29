@@ -30,9 +30,7 @@
         <div class="offcanvas-body">
             <hr/>
             <ul class="nav flex-column" id="menu">
-                <li><a href="{{route('alumno.miscursos')}}" class="nav-link text-white">- Alumno- Mis Cursos</a></li>
-                <li><a href="{{route('alumno.tutorias')}}" class="nav-link text-white">- Alumno - Tutorias</a></li>
-                <li><a href="{{route('alumno.clasificacion')}}" class="nav-link text-white">- Alumno - Clasificacion</a></li>
+                <li><a href="{{route('usuario.miscursos')}}" class="nav-link text-white">- Alumno- Mis Cursos</a></li>
                 <li style="margin-top: 5vh">
                     <a class="mt-2 btn btn-outline-light" href="{{route('home.index')}}">Regresar a la pagina
                         principal</a>

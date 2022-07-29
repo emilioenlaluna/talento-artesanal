@@ -1,4 +1,4 @@
-@extends('layouts.alumno')
+@extends('layouts.usuario')
 @section('title', $viewData["title"])
 @section('content')
     <div class="card">
