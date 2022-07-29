@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class PadresAuthMiddleware
+class UsuarioAuthMiddleware
 {
     /**
      * Handle an incoming request.
@@ -17,7 +17,7 @@ class PadresAuthMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user() && Auth::user()->getRole() == 2) {
+        if (Auth::user() && Auth::user()->getRole() == 1) {
             return $next($request);
         } else {
             return redirect()->route('home.index');

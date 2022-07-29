@@ -26,29 +26,15 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
 
-        Blade::if('maestro', function () {
+        Blade::if('usuario', function () {
             if (Auth::user() && Auth::user()->getRole() == 1) {
                 return 1;
             }
             return 0;
         });
 
-        Blade::if('padres', function () {
+        Blade::if('admin', function () {
             if (Auth::user() && Auth::user()->getRole() == 2) {
-                return 1;
-            }
-            return 0;
-        });
-
-        Blade::if('tutor', function () {
-            if (Auth::user() && Auth::user()->getRole() == 3) {
-                return 1;
-            }
-            return 0;
-        });
-
-        Blade::if('alumno', function () {
-            if (Auth::user() && Auth::user()->getRole() == 4) {
                 return 1;
             }
             return 0;

@@ -37,18 +37,6 @@ class AlumnoHomeController extends Controller
         return view('alumno.miscursos')->with("viewData", $viewData);
     }
 
-    public function clasificacion()
-    {
-        $clasificadores = DB::table('users')
-            ->select('users.id', 'users.name', 'users.puntos')
-            ->where('users.rol_idrol', '<>', 2)
-            ->orderByDesc('users.puntos')
-            ->simplePaginate(5);
-        return view('alumno.clasificacion')->with("clasificadores", $clasificadores);
-    }
-
-
-//$query = DB::select(DB::raw("SELECT * FROM your_table"));
 
 
 }

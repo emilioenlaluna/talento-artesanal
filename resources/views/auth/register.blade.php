@@ -12,29 +12,6 @@
                             @csrf
 
                             <div class="row mb-3">
-                                <label for="roles" class="col-md-4 col-form-label text-md-end">¿A qué te
-                                    dedicas?</label>
-
-                                <div class="col-md-6">
-                                    <select name="roles" id="roles"
-                                            class="form-control @error('roles') is-invalid @enderror"
-                                            value="{{ old('roles') }}" required>
-                                        <option>--Seleccione opción--</option>
-                                        <option value=1>Soy Un Maestro</option>
-                                        <option value=2>Soy Un Padre</option>
-                                        <option value=3>Soy Un Tutor</option>
-                                    </select>
-
-                                    @error('roles')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                            </div>
-
-
-                            <div class="row mb-3">
                                 <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Nombre') }}</label>
 
                                 <div class="col-md-6">
