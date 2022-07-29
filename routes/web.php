@@ -118,6 +118,21 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
+/* *******************************************
+ * HISTORIAS DE EXITO
+ ******************************************** */
+
+Route::get('/Historias', 'App\Http\Controllers\HistoriasController@historias')->name("historias.historias");
+
+Route::get('/Historia/{id}', 'App\Http\Controllers\HistoriasController@historiaDetalles')->name("historias.historiaDetalles");
+
+Route::middleware(['auth'])->group(function () {
+
+    Route::post('/Historia/Escribir', 'App\Http\Controllers\HistoriasController@contarHistoria')->name("historias.contarHistoria");
+
+});
+
+
 
 /* *******************************************
 * RUTAS DE AUTH
