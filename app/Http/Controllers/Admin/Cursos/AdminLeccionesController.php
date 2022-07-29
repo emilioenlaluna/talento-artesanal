@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Maestro\Cursos;
+namespace App\Http\Controllers\Admin\Cursos;
 
 use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 
-class MaestroLeccionesController extends Controller
+class AdminLeccionesController extends Controller
 {
 
     public function leccion($id)
@@ -22,7 +22,7 @@ class MaestroLeccionesController extends Controller
         $viewData["title"] = "Gestionar Lecciones";
         $viewData["lecciones"] = json_decode($hijos, true);
         $viewData["idCurso"] = $id;
-        return view('maestro.lecciones')->with("viewData", $viewData);
+        return view('admin.lecciones')->with("viewData", $viewData);
     }
 
 
@@ -43,15 +43,25 @@ class MaestroLeccionesController extends Controller
             ->select(
                 'materialleccion.contenido',
                 'materialleccion.fecha',
+                'materialleccion.titulo',
             )
             ->where('materialleccion.Leccion_idLeccion', '=', $id)
             ->get();
         $viewData = [];
         $viewData["title"] = "Material";
         $viewData["material"] = json_decode($material, true);
-        $viewData["idCurso"] = $id;
-        return view('maestro.material')->with("viewData", $viewData);
+        $viewData["idleccion"] = $id;
+        return view('admin.material')->with("viewData", $viewData);
     }
 
+    public function guardarmaterial(Request $request){
+        DB::table('materialleccion')->insert([
+            'contenido' => $request->input('contenido'),
+            'Leccion_idLeccion' => $request->input('idleccion'),
+            'titulo' => $request->input('titulo'),
+            'fecha' => now()
+        ]);
+        return back();
+    }
 
 }

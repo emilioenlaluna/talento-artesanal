@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Maestro\Cursos;
+namespace App\Http\Controllers\Admin\Cursos;
 
 use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 
-class MaestroCursosController extends Controller
+class AdminCursosController extends Controller
 {
 
 
@@ -22,7 +22,7 @@ class MaestroCursosController extends Controller
         $viewData = [];
         $viewData["title"] = "Gestionar Cursos";
         $viewData["cursos"] = json_decode($hijos, true);
-        return view('maestro.cursos')->with("viewData", $viewData);
+        return view('admin.cursos')->with("viewData", $viewData);
     }
 
     public function guardar(Request $request)

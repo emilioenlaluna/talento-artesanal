@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('/css/barraNavegacionCursos.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/Cursos/misCursos.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cursos | Mi entrenador de aprendizaje</title>
+    <title>Cursos </title>
 
 </head>
 
@@ -23,7 +23,7 @@
             <a class="navbar-brand ">
                 <img id="logo" src="{{ asset('/img/icon.png') }}" alt="Icono de la pagina"
                      class="d-inline-block align-text-center" style="margin-bottom: 3%;">
-                <strong class="titulo">Mi entrenador de aprendizaje 📖</strong>
+                <strong class="titulo"></strong>
             </a>
             <button class="navbar-toggler collapsed" id="botonCollapse" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -33,13 +33,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('maestro.cursos') }}">Cursos</a>
+                        <a class="nav-link" href="{{ route('admin.cursos') }}">Cursos</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav justyfy-content-end">
-                    @maestro
+                    @admin
                     <a class="nav-link active" href="{!! url('/Maestro'); !!}">Alumno</a>
-                    @endmaestro
+                    @endadmin
                 </ul>
             </div>
         </div>
@@ -56,7 +56,7 @@
             Crear Curso
         </div>
         <div class="card-body">
-            <form method="POST" action="{{route('maestro.guardarleccion')}}">
+            <form method="POST" action="{{route('admin.guardarleccion')}}">
                 @csrf
                 <input type="hidden" name="curso" value="{{$viewData["idCurso"]}}">
                 <label class="form-label">Nombre Lección</label>
@@ -85,7 +85,7 @@
                     <h5>{{$leccion["NombreLeccion"]}}</h5>
                     <p>{{$leccion["FechaLeccion"]}}</p>
                     <p>{{$leccion["Detalles"]}}</p>
-                    <a  class="btn btn-cafe" href="{{route('maestro.cursos.material',['id'=>$leccion["idLeccion"]])}}">Ver Contenido Leccion</a>
+                    <a  class="btn btn-cafe" href="{{route('admin.cursos.material',['id'=>$leccion["idLeccion"]])}}">Ver Contenido Leccion</a>
                 </div>
             </div>
             <hr class="my-4">

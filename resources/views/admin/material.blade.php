@@ -38,13 +38,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('maestro.cursos') }}">Cursos</a>
+                        <a class="nav-link" href="{{ route('admin.cursos') }}">Cursos</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav justyfy-content-end">
-                    @maestro
-                    <a class="nav-link active" href="{!! url('/Maestro'); !!}">Alumno</a>
-                    @endmaestro
+                    @admin
+                    <a class="nav-link active" href="{!! url('/admin'); !!}">Administrador</a>
+                    @endadmin
                 </ul>
             </div>
         </div>
@@ -61,10 +61,14 @@
             Crear Material
         </div>
         <div class="card-body">
-            <form method="POST" action="{{route('maestros.leccion.guardarmaterial')}}">
+            <form method="POST" action="{{route('admin.leccion.guardarmaterial')}}" enctype="multipart/form-data">
                 @csrf
-                <textarea id="summernote" name="entra" style=".note-group-select-from-files {display: none;}"></textarea>
-                <button type="submit" class="btn btn-primary">Crear</button>
+                <input type="hidden" name="idleccion" value="{{ $viewData["idleccion"] }}">
+                <label class="form-label">Titulo</label>
+                <input type="text" class="form-control" name="titulo">
+                <br>
+                <textarea class="form-control" id="summernote" name="contenido" style=".note-group-select-from-files {display: none;}"></textarea>
+                <br><button type="submit" class="btn btn-primary">Crear</button>
             </form>
 
         </div>
@@ -83,9 +87,7 @@
                 <div class="card-body">
                     @php echo html_entity_decode ($material["contenido"]) @endphp
                     <hr class="my-4">
-                    <p>{{$material["creado"]}}</p>
-                    <p>{{$material["actualizado"]}}</p>
-                    <img src="{{$material["imagen"]}}">
+                    <p>{{$material["fecha"]}}</p>
                 </div>
             </div>
             <hr class="my-4">
@@ -118,6 +120,7 @@
             ['view', ['fullscreen', 'codeview', 'help']]
         ]
     });
+    $('div.note-group-select-from-files').remove();
 </script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

@@ -16,12 +16,12 @@
     <!-- sidebar -->
     <div class="p-3 col fixed text-white bg-dark">
         <a class="text-white text-decoration-none">
-            <span class="fs-4">Maestro</span>
+            <span class="fs-4">Administrador</span>
         </a>
         <hr/>
         <ul class="nav flex-column">
-            <li><a href="{{route('maestro.alumnos.index')}}" class="nav-link text-white">- Maestro- Mis Alumnos</a></li>
-            <li><a href="{{route('maestro.cursos')}}" class="nav-link text-white">- Maestro - Mis Cursos</a></li>
+            <li><a  class="nav-link text-white">- Administrador- Gestion de Cuentas</a></li>
+            <li><a href="{{route('admin.cursos')}}" class="nav-link text-white">- Administrador - Cursos</a></li>
             <li>
                 <a class="mt-2 btn bg-primary text-white" href="{{route('home.index')}}">Regresar a la pagina principal</a>
             </li>
