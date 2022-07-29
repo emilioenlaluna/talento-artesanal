@@ -12,8 +12,7 @@
                             <h5>
                                 <a class="text-dark">{{ $curso->NombreCurso }}</a>
                             </h5>
-                            <small class="">Creación: {{ $curso->FechaInicio }}</small>
-                            <small class="">Ultima modificacón: {{ $curso->FechaFin }} </small>
+                            <small class="">Descripción: {{ $curso->detalles }}</small>
                             <a href="{{ route('cursos.detalles', ['id'=> $curso->idCurso]) }}"
                                class="btn bg-primary text-white btn-detalles">Detalles</a>
                         </div>

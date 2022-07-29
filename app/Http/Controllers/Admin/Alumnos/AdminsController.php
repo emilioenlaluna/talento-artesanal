@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Maestro\Alumnos;
+namespace App\Http\Controllers\Admin\Alumnos;
 
 use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 
-class MaestroAlumnosController extends Controller
+class AdminsController extends Controller
 {
 
     public function index()
@@ -21,7 +21,7 @@ class MaestroAlumnosController extends Controller
         $viewData = [];
         $viewData["title"] = "Gestionar Alumnos";
         $viewData["alumno"] = json_decode($hijos, true);
-        return view('maestro.gestionalumnos')->with("viewData", $viewData);
+        return view('admin.gestionalumnos')->with("viewData", $viewData);
     }
 
     public function guardar(Request $request)
@@ -66,7 +66,7 @@ class MaestroAlumnosController extends Controller
                 'email' => $request->input('email'),
                 'password' => Hash::make($request->input('password')),
             ]);
-        return redirect()->route('maestro.alumnos.index');
+        return redirect()->route('admin.alumnos.index');
     }
 
 

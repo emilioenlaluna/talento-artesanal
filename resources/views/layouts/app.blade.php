@@ -82,26 +82,14 @@
             @guest
                 <a class="nav-link active" href="{{ route('login') }}">Iniciar Sesión</a>
                 <a class="nav-link active" href="{{ route('register') }}">Registrarme</a>
-
             @else
-                {{--                        <a class="nav-link active" href="{{ route('myaccount.orders') }}">Mis Cursos</a>--}}
+                @usuario
+                <a class="nav-link active" href="{{route('admin.home.dashboard')}}">Menu Usuario</a>
+                @endusuario
 
-
-                @padres
-                <a class="nav-link active" href="{{route('padres.home.dashboard')}}">Menu Padres</a>
-                @endpadres
-
-                @maestro
-                <a class="nav-link active" href="{{route('maestro.home.dashboard')}}">Menu Maestro</a>
-                @endmaestro
-
-                @tutor
-                <a class="nav-link active">Menu Tutor</a>
-                @endtutor
-
-                @alumno
-                <a class="nav-link active" href="{{route('alumno.dashboard')}}">Menu Alumno</a>
-                @endalumno
+                @admin
+                <a class="nav-link active" href="{{route('admin.home.dashboard')}}">Menu Administrador</a>
+                @endadmin
 
                 <form id="logout" action="{{ route('logout') }}" method="POST">
                     <a role="button" class="nav-link active"

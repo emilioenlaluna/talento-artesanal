@@ -31,6 +31,10 @@ Route::get('/Categorias/{id}/Cursos', 'App\Http\Controllers\CursosController@cur
 
 Route::get('/DatalleCurso/{id}', 'App\Http\Controllers\CursosController@detalles')->name("cursos.detalles");
 
+Route::get('/Lecciones/{id}', 'App\Http\Controllers\ContenidoCursosController@leccion')->name("cursos.leccion");
+
+Route::get('/Material/{id}', 'App\Http\Controllers\ContenidoCursosController@material')->name("cursos.material");
+
 
 /* *******************************************
  * USUARIO VERIFICADO
@@ -39,6 +43,12 @@ Route::get('/DatalleCurso/{id}', 'App\Http\Controllers\CursosController@detalles
 Route::middleware(['auth', 'verified'])->group(function () {
 });
 
+/* *******************************************
+ * CURSOS
+ ******************************************** */
+
+
+
 
 /* *******************************************
  * USUARIO
@@ -46,21 +56,21 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 Route::middleware(['usuario'])->group(function () {
 
-    Route::get('/usuario/dashboard', 'App\Http\Controllers\Alumno\Home\AlumnoHomeController@dashboard')->name('alumno.dashboard');
+    Route::get('/usuario/dashboard', 'App\Http\Controllers\Usuario\Home\UsuarioHomeController@dashboard')->name('usuario.dashboard');
 
-    Route::get('/usuario/miscursos', 'App\Http\Controllers\Alumno\Home\AlumnoHomeController@miscursos')->name('alumno.miscursos');
+    Route::get('/usuario/miscursos', 'App\Http\Controllers\Usuario\Home\UsuarioHomeController@miscursos')->name('usuario.miscursos');
 
-    Route::get('/usuario/miscursos/curso/{id}', 'App\Http\Controllers\Alumno\Cursos\AlumnoCursosController@curso')->name('alumno.curso');
+    Route::get('/usuario/miscursos/curso/{id}', 'App\Http\Controllers\Usuario\Cursos\UsuarioCursosController@curso')->name('usuario.curso');
 
-    Route::get('/usuario/Leccion/{id}', 'App\Http\Controllers\Alumno\Cursos\AlumnoCursosController@leccion')->name("alumno.leccion");
+    Route::get('/usuario/Leccion/{id}', 'App\Http\Controllers\Usuario\Cursos\UsuarioCursosController@leccion')->name("usuario.leccion");
 
-    Route::get('/usuario/miscursos/curso/leccion/foro/{id}', 'App\Http\Controllers\Alumno\Cursos\AlumnoCursosController@foroLeccion')->name('alumno.curso.foro.leccion');
+    Route::get('/usuario/miscursos/curso/leccion/foro/{id}', 'App\Http\Controllers\Usuario\Cursos\UsuarioCursosController@foroLeccion')->name('usuario.curso.foro.leccion');
 
-    Route::post('/usuario/miscursos/curso/leccion/foro/mensaje', 'App\Http\Controllers\Alumno\Cursos\AlumnoCursosController@enviarMensaje')->name('alumno.curso.foro.enviarMensaje');
+    Route::post('/usuario/miscursos/curso/leccion/foro/mensaje', 'App\Http\Controllers\Usuario\Cursos\UsuarioCursosController@enviarMensaje')->name('usuario.curso.foro.enviarMensaje');
 
-    Route::get('/usuario/miscursos/curso/leccion/{id}', 'App\Http\Controllers\Alumno\Cursos\AlumnoCursosController@leccion')->name('alumno.curso.leccion');
+    Route::get('/usuario/miscursos/curso/leccion/{id}', 'App\Http\Controllers\Usuario\Cursos\UsuarioCursosController@leccion')->name('usuario.curso.leccion');
 
-    Route::post('/usuario/inscribir/{id}', 'App\Http\Controllers\Alumno\Cursos\AlumnoCursosController@inscribir')->name('alumno.inscribir');
+    Route::post('/usuario/inscribir/{id}', 'App\Http\Controllers\Usuario\Cursos\UsuarioCursosController@inscribir')->name('usuario.inscribir');
 
 
 });
@@ -74,21 +84,19 @@ Route::middleware(['usuario'])->group(function () {
 
 Route::middleware(['admin', 'auth'])->group(function () {
 
-    Route::get('/admin', 'App\Http\Controllers\Maestro\Home\MaestroHomeController@dashboard')->name("maestro.home.dashboard");
+    Route::get('/admin', 'App\Http\Controllers\Admin\Home\AdminHomeController@dashboard')->name("admin.home.dashboard");
 
-    Route::get('/admin/Cursos', 'App\Http\Controllers\Maestro\Cursos\MaestroCursosController@index')->name("maestro.cursos");
+    Route::get('/admin/Cursos', 'App\Http\Controllers\Admin\Cursos\AdminCursosController@index')->name("admin.cursos");
 
-    Route::post('/admin/Cursos/Guardar', 'App\Http\Controllers\Maestro\Cursos\MaestroCursosController@guardar')->name("maestro.cursos.guardar");
+    Route::post('/admin/Cursos/Guardar', 'App\Http\Controllers\Admin\Cursos\AdminCursosController@guardar')->name("admin.cursos.guardar");
 
-    Route::get('/admin/Cursos/Leccion/{id}', 'App\Http\Controllers\Maestro\Cursos\MaestroLeccionesController@leccion')->name("maestro.cursos.leccion");
+    Route::get('/admin/Cursos/Leccion/{id}', 'App\Http\Controllers\Admin\Cursos\AdminLeccionesController@leccion')->name("admin.cursos.leccion");
 
-    Route::post('/admin/Cursos/Leccion/guardar', 'App\Http\Controllers\Maestro\Cursos\MaestroLeccionesController@guardarleccion')->name("maestro.guardarleccion");
+    Route::post('/admin/Cursos/Leccion/guardar', 'App\Http\Controllers\Admin\Cursos\AdminLeccionesController@guardarleccion')->name("admin.guardarleccion");
 
+    Route::get('/admin/Cursos/Material/{id}', 'App\Http\Controllers\Admin\Cursos\AdminLeccionesController@material')->name("admin.cursos.material");
 
-    Route::get('/admin/Cursos/Material/{id}', 'App\Http\Controllers\Maestro\Cursos\MaestroLeccionesController@material')->name("maestro.cursos.material");
-
-    Route::post('/admin/Cursos/Leccion/Guardar', 'App\Http\Controllers\Maestro\Cursos\MaestroLeccionesController@guardarmaterial')->name("maestros.leccion.guardarmaterial");
-
+    Route::post('/admin/Cursos/Leccion/Guardar', 'App\Http\Controllers\Admin\Cursos\AdminLeccionesController@guardarmaterial')->name("admin.leccion.guardarmaterial");
 
 });
 

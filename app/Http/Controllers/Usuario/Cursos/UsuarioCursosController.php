@@ -31,10 +31,6 @@ class AlumnoCursosController extends Controller
         return redirect()->intended(route('home.index'))->with("viewData", $viewData);;
     }
 
-    public function leccion($id)
-    {
-
-    }
 
 
     public function foroLeccion($id)

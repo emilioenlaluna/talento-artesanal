@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="{{ asset('/css/Cursos/misCursos.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cursos | Mi entrenador de aprendizaje</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 
 </head>
 
@@ -33,13 +38,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('maestro.cursos') }}">Cursos</a>
+                        <a class="nav-link" href="{{ route('admin.cursos') }}">Cursos</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav justyfy-content-end">
-                    @maestro
-                    <a class="nav-link active" href="{!! url('/Maestro'); !!}">Alumno</a>
-                    @endmaestro
+                    @admin
+                    <a class="nav-link active" href="{!! url('/admin'); !!}">Administrador</a>
+                    @endadmin
                 </ul>
             </div>
         </div>
@@ -53,39 +58,36 @@
 <div class="container">
     <div class="card mb-4">
         <div class="card-header">
-            Crear Curso
+            Crear Material
         </div>
         <div class="card-body">
-            <form method="POST" action="{{route('maestro.guardarleccion')}}">
+            <form method="POST" action="{{route('admin.leccion.guardarmaterial')}}" enctype="multipart/form-data">
                 @csrf
-                <input type="hidden" name="curso" value="{{$viewData["idCurso"]}}">
-                <label class="form-label">Nombre Lección</label>
-                <input type="text" class="form-control" name="nombre">
-                <label class="form-label">Fecha</label>
-                <input type="datetime-local" name="fecha" class="form-control">
-                <label class="form-label">Detalles</label>
-                <input type="text" name="detalles" class="form-control">
+                <input type="hidden" name="idleccion" value="{{ $viewData["idleccion"] }}">
+                <label class="form-label">Titulo</label>
+                <input type="text" class="form-control" name="titulo">
                 <br>
-                <button type="submit" class="btn btn-primary">Crear</button>
+                <textarea class="form-control" id="summernote" name="contenido" style=".note-group-select-from-files {display: none;}"></textarea>
+                <br><button type="submit" class="btn btn-primary">Crear</button>
             </form>
 
         </div>
     </div>
 </div>
 
+
 <div class="container">
-    <h2 class="display-3">Lecciones del Curso</h2>
-    <div class="accordion" id="accordionPanelsStayOpenExample">
-        @foreach ($viewData["lecciones"] as $leccion)
+    <h2 class="display-3">Material de la Lección</h2>
+    <div>
+        @foreach ($viewData["material"] as $material)
             <div class="card">
                 <div class="card-header">
-                    {{$leccion["NombreLeccion"]}}
+                    {{$material["titulo"]}}
                 </div>
                 <div class="card-body">
-                    <h5>{{$leccion["NombreLeccion"]}}</h5>
-                    <p>{{$leccion["FechaLeccion"]}}</p>
-                    <p>{{$leccion["Detalles"]}}</p>
-                    <a  class="btn btn-cafe" href="{{route('maestro.cursos.material',['id'=>$leccion["idLeccion"]])}}">Ver Contenido Leccion</a>
+                    @php echo html_entity_decode ($material["contenido"]) @endphp
+                    <hr class="my-4">
+                    <p>{{$material["fecha"]}}</p>
                 </div>
             </div>
             <hr class="my-4">
@@ -102,6 +104,30 @@
     <h8><b>CHICHARRON-TEK</b></h8>
 </div>
 <!-- fin del pie -->
+
+<script>
+    $('#summernote').summernote({
+        placeholder: 'Hello stand alone ui',
+        tabsize: 2,
+        height: 120,
+        toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'video']],
+            ['view', ['fullscreen', 'codeview', 'help']]
+        ]
+    });
+    $('div.note-group-select-from-files').remove();
+</script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
 <script src="{{ asset('js/jQuery/node_modules/jquery/dist/jquery.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/barraNavegacion.js') }}" type="text/javascript"></script>

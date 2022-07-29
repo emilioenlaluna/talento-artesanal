@@ -13,8 +13,6 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
             integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
             crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 
 </head>
 
@@ -38,13 +36,8 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('maestro.cursos') }}">Cursos</a>
+                        <a class="nav-link" href="{{ route('cursos.cursos') }}">Cursos</a>
                     </li>
-                </ul>
-                <ul class="navbar-nav justyfy-content-end">
-                    @maestro
-                    <a class="nav-link active" href="{!! url('/Maestro'); !!}">Alumno</a>
-                    @endmaestro
                 </ul>
             </div>
         </div>
@@ -54,22 +47,6 @@
 
 <div style="padding-top: 80px;"></div>
 
-
-<div class="container">
-    <div class="card mb-4">
-        <div class="card-header">
-            Crear Material
-        </div>
-        <div class="card-body">
-            <form method="POST" action="{{route('maestros.leccion.guardarmaterial')}}">
-                @csrf
-                <input id="summernote" name="entra" style=".note-group-select-from-files {display: none;}">
-                <button type="submit" class="btn btn-primary">Crear</button>
-            </form>
-
-        </div>
-    </div>
-</div>
 
 
 <div class="container">
@@ -83,36 +60,13 @@
                 <div class="card-body">
                     @php echo html_entity_decode ($material["contenido"]) @endphp
                     <hr class="my-4">
-                    <p>{{$material["creado"]}}</p>
-                    <p>{{$material["actualizado"]}}</p>
-                    <img src="{{$material["imagen"]}}">
+                    <p>{{$material["fecha"]}}</p>
                 </div>
             </div>
             <hr class="my-4">
         @endforeach
     </div>
 </div>
-
-{{--<div class="container">--}}
-{{--    <h2 class="display-3">Lecciones del Curso</h2>--}}
-{{--    <div class="accordion" id="accordionPanelsStayOpenExample">--}}
-{{--        @foreach ($viewData["lecciones"] as $leccion)--}}
-{{--            <div class="card">--}}
-{{--                <div class="card-header">--}}
-{{--                    {{$leccion["NombreLeccion"]}}--}}
-{{--                </div>--}}
-{{--                <div class="card-body">--}}
-{{--                    <h5>{{$leccion["NombreLeccion"]}}</h5>--}}
-{{--                    <p>{{$leccion["FechaLeccion"]}}</p>--}}
-{{--                    <p>{{$leccion["Detalles"]}}</p>--}}
-{{--                    <a href="{{$leccion["idLeccion"]}}"></a>--}}
-{{--                    <button class="btn btn-cafe" >Ver Contenido Leccion</button>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <hr class="my-4">--}}
-{{--        @endforeach--}}
-{{--    </div>--}}
-{{--</div>--}}
 
 
 <hr class="my-4">
@@ -124,27 +78,10 @@
 </div>
 <!-- fin del pie -->
 
-<script>
-    $('#summernote').summernote({
-        placeholder: 'Hello stand alone ui',
-        tabsize: 2,
-        height: 120,
-        toolbar: [
-            ['style', ['style']],
-            ['font', ['bold', 'underline', 'clear']],
-            ['color', ['color']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['table', ['table']],
-            ['insert', ['link', 'picture', 'video']],
-            ['view', ['fullscreen', 'codeview', 'help']]
-        ]
-    });
-</script>
+
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
-<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 
 <script src="{{ asset('js/jQuery/node_modules/jquery/dist/jquery.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap/bootstrap.bundle.min.js') }}" type="text/javascript"></script>

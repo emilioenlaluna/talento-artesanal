@@ -13,61 +13,30 @@
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">
-                                 (${{ $curso->FechaInicio }})
+                                 {{ $curso->NombreCurso }}
                             </h5>
-                            <p class="card-text">{{ $curso->FechaFin }}</p>
+                            <p class="card-text">{{ $curso->detalles }}</p>
                             <p class="card-text">
                             {{--                    <form method="POST" action="{{ route('cart.add', ['id'=> $viewData['product']->idCurso]) }}">--}}
                             <form>
                                 <div class="row">
                                     @csrf
                                     <div class="col-auto">
-                                        <div class="input-group col-auto">
-                                            <div class="input-group-text">Descripción</div>
-                                        </div>
+                                        <a class="btn bg-primary text-white" href="{{ route('cursos.leccion',['id'=>$curso->idCurso])}}">
+                                            Ir a Contenido
+                                        </a>
                                     </div>
                                     @guest
                                         <div class="col-auto">
                                             <a class="btn bg-primary text-white" href="{{ route('login') }}">Inicie
-                                                Sesión para
-                                                Inscribirse
+                                                Sesión para guardarlo en mi Cursos
                                             </a>
                                         </div>
+                                        
                                     @else
-                                        @padres
-                                        <div class="col-auto">
-                                            <button class="btn bg-primary text-white" type="submit">Inscribir Hijo a
-                                                Curso
-                                            </button>
-                                        </div>
-                                        @endpadres
-
-                                        @maestro
-                                        <div class="col-auto">
-                                            <button class="btn bg-primary text-white" type="submit">Ir A Mis Cursos
-                                            </button>
-                                        </div>
-                                        @endmaestro
-
-                                        @tutor
-                                        <div class="col-auto">
-                                            <button class="btn bg-primary text-white" type="submit">Solicitar Hacer
-                                                Tutorias en Curso
-                                            </button>
-                                        </div>
-                                        @endtutor
-
-                                        @alumno
-                                        <div class="col-auto">
-                                            <form action="{{ route('alumno.inscribir',['id'=>$curso->idCurso])}}"
-                                                  method="POST">
-                                                @csrf
-                                                <button class="btn btn-outline-info" type="submit" >
-                                                    Inscribirme A Curso
-                                                </button>
-                                            </form>
-                                        </div>
-                                        @endalumno
+                                        @admin
+                                            <a href="{{ route('admin.cursos') }}">Ir a mis Cursos</a>
+                                        @endadmin
                                     @endguest
 
                                     @if($errors->any())

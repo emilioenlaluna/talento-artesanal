@@ -1,12 +1,12 @@
-@extends('layouts.maestro')
+@extends('layouts.admin')
 @section('title', $viewData["title"])
 @section('content')
     <div class="card">
         <div class="card-header">
-            Maestro
+            Administrador
         </div>
         <div class="card-body">
-            Bienvenido al panel Maestro
+            Bienvenido al panel Administrador
         </div>
     </div>
 @endsection

@@ -32,16 +32,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a href="{{route('padres.hijos.index')}}" class="nav-link text-white">Mis Cursos</a>
+                        <a class="nav-link text-white">Mis Cursos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('cursos.categorias') }}">Categorias</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav justyfy-content-end">
-                    @if(Auth::guard('alumno')->check())
-                        <a class="nav-link active" href="{!! url('/alumno/dashboard'); !!}">Alumno</a>
-                    @endif
+                    @admin
+                        <a class="nav-link active" href="{{ route('admin.home.dashboard') }}">Alumno</a>
+                    @endadmin
                 </ul>
             </div>
         </div>
@@ -64,10 +64,10 @@
             @foreach ($viewData["cursos"] as $curso)
                 <div class="col esp centroH">
                     <div class="card tarjeta">
-                        <a href="{{ route('maestro.cursos.leccion', ['id'=> $curso["idCurso"]]) }}"><img
+                        <a href="{{ route('admin.cursos.leccion', ['id'=> $curso["idCurso"]]) }}"><img
                             src="{{$curso["imagenUrl"]}}" class="card-img-top" alt="Artesania"></a>
                         <div class="card-body">
-                            <a href="{{ route('maestro.cursos.leccion', ['id'=> $curso["idCurso"]]) }}"
+                            <a href="{{ route('admin.cursos.leccion', ['id'=> $curso["idCurso"]]) }}"
                                class="btn btn-cafe">Ir a Curso</a>
                             <h5 class="card-title">{{$curso["NombreCurso"]}}</h5>
                             <p class="card-text">{{$curso["FechaInicio"]}}</p>
@@ -114,7 +114,7 @@
         </div>
         <div class="card-body">
 
-            <form method="POST" action="{{route('maestro.cursos.guardar')}}">
+            <form method="POST" action="{{route('admin.cursos.guardar')}}">
                 @csrf
 
                 <div class="row">
