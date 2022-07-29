@@ -12,10 +12,7 @@
                             <a
                                 class="btn bg-primary text-white">{{ $curso->NombreCurso }}</a>
                             <p class="btn bg-primary text-white ">
-                                {{ $curso->FechaInicio }}
-                            </p>
-                            <p class="btn bg-primary text-white ">
-                                {{ $curso->FechaFin }}
+                                {{ $curso->detalles }}
                             </p>
                             <a href="{{ route('cursos.detalles', ['id'=> $curso->idCurso]) }}"
                                class="btn bg-primary text-white">Detalles</a>

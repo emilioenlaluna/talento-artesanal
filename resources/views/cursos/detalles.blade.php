@@ -13,19 +13,14 @@
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">
-                                 (${{ $curso->FechaInicio }})
+                                 {{ $curso->NombreCurso }}
                             </h5>
-                            <p class="card-text">{{ $curso->FechaFin }}</p>
+                            <p class="card-text">{{ $curso->detalles }}</p>
                             <p class="card-text">
                             {{--                    <form method="POST" action="{{ route('cart.add', ['id'=> $viewData['product']->idCurso]) }}">--}}
                             <form>
                                 <div class="row">
                                     @csrf
-                                    <div class="col-auto">
-                                        <div class="input-group col-auto">
-                                            <div class="input-group-text">Descripción</div>
-                                        </div>
-                                    </div>
                                     <div class="col-auto">
                                         <a class="btn bg-primary text-white" href="{{ route('cursos.leccion',['id'=>$curso->idCurso])}}">
                                             Ir a Contenido
@@ -39,17 +34,6 @@
                                         </div>
                                         
                                     @else
-                                        @usuario
-                                        <div class="col-auto">
-                                            <form action="{{ route('usuario.inscribir',['id'=>$curso->idCurso])}}"
-                                                  method="POST">
-                                                @csrf
-                                                <button class="btn btn-outline-info" type="submit" >
-                                                    Inscribirme A Curso
-                                                </button>
-                                            </form>
-                                        </div>
-                                        @endusuario
                                         @admin
                                             <a href="{{ route('admin.cursos') }}">Ir a mis Cursos</a>
                                         @endadmin
