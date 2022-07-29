@@ -1,188 +1,240 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-          crossorigin="anonymous"/>
-    <link rel="stylesheet" href="{{ asset('/css/bootstrap/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/indexStyle.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/barraNavegacion.css') }}">
-    <link href="{{ asset('/img/icon.png') }}" rel="icon"/>
-    <title>@yield('titulo', 'Mi entrenador de aprendizaje')</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description"
+		content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+
+	<!-- title -->
+	<title>@yield('titulo', 'Talento Artesanal | Etsy')</title>
+
+	<!-- favicon -->
+    <link href="{{ asset('/img/favicon.png') }}" rel="icon"/>
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="{{ asset('/css/all.min.css') }}">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="{{ asset('/bootstrap/css/bootstrap.min.css') }}">
+	<!-- owl carousel -->
+	<link rel="stylesheet" href="{{ asset('/css/owl.carousel.css') }}">
+	<!-- magnific popup -->
+	<link rel="stylesheet" href="{{ asset('/css/magnific-popup.css') }}">
+	<!-- animate css -->
+	<link rel="stylesheet" href="{{ asset('/css/animate.css') }}">
+	<!-- mean menu css -->
+	<link rel="stylesheet" href="{{ asset('/css/meanmenu.min.css') }}">
+	<!-- main style -->
+	<link rel="stylesheet" href="{{ asset('/css/main.css') }}">
+	<!-- responsive -->
+	<link rel="stylesheet" href="{{ asset('/css/responsive.css') }}">
+
 </head>
+
 <body>
 
-{{--<!-- Barra de navegación -->--}}
-{{--<header>--}}
-{{--    <nav id="navP" class="navbar fixed-top navbar-expand-xl navbar-dark scrolling-navbar">--}}
-{{--        <div class="container-fluid">--}}
-{{--            <a class="navbar-brand " href="#destacado">--}}
-{{--                <img id="logo" src="{{ asset('/img/icon.png') }}" alt="Icono de la pagina"--}}
-{{--                     class="d-inline-block align-text-center" style="margin-bottom: 3%;">--}}
-{{--                <strong class="titulo">Mi entrenador de aprendizaje 📖</strong>--}}
-{{--            </a>--}}
-{{--            <button class="navbar-toggler collapsed" id="botonCollapse" type="button" data-bs-toggle="collapse"--}}
-{{--                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"--}}
-{{--                    aria-expanded="false" aria-label="Toggle navigation">--}}
-{{--                <span class="navbar-toggler-icon"></span>--}}
-{{--            </button>--}}
-{{--            <div class="collapse navbar-collapse" id="navbarSupportedContent">--}}
-{{--                <ul class="navbar-nav me-auto mb-2 mb-lg-0">--}}
-{{--                    <a class="nav-link active" href="{{ route('cursos.cursos') }}">Cursos</a>--}}
-{{--                    <a class="nav-link active" href="{{ route('cursos.categorias') }}">Categorias</a>--}}
-{{--                    @guest--}}
-{{--                        <a class="nav-link active" href="{{ route('login') }}">Iniciar Sesión</a>--}}
-{{--                        <a class="nav-link active" href="{{ route('register') }}">Registrarme</a>--}}
-{{--                    @else--}}
-{{--                        --}}{{--                        <a class="nav-link active" href="{{ route('myaccount.orders') }}">Mis Cursos</a>--}}
-{{--                        <form id="logout" action="{{ route('logout') }}" method="POST">--}}
-{{--                            <a role="button" class="nav-link active"--}}
-{{--                               onclick="document.getElementById('logout').submit();">Cerrar Sesión</a>--}}
-{{--                            @csrf--}}
-{{--                        </form>--}}
+	<!--PreLoader-->
+	<div class="loader">
+		<div class="loader-inner">
+			<div class="circle"></div>
+		</div>
+	</div>
+	<!--PreLoader Ends-->
 
-{{--                        @padres--}}
-{{--                        <a class="nav-link active" href="{{route('padres.home.dashboard')}}">Menu Padres</a>--}}
-{{--                        @endpadres--}}
+	<!-- header -->
+	<div class="top-header-area" id="sticker">
+		<div class="container">
+			<div class="row">
+				<!-- logo -->
+				<div class=" col-sm-auto site-logo">
+					<a href="{{ route('home.index') }}">
+						<img src="{{ asset('/img/logo.png') }}" height="65" width="100" alt="Logo de talento artesanal">
+					</a>
+				</div>
+				<!-- logo -->
+				<div class="col text-center">
+					<div class="main-menu-wrap">
 
-{{--                        @maestro--}}
-{{--                        <a class="nav-link active" href="{{route('maestro.home.dashboard')}}">Menu Maestro</a>--}}
-{{--                        @endmaestro--}}
+						<!-- menu start -->
+						<nav class="main-menu">
+							<ul>
+                                <li><a  href="{{route('home.index')}}">Inicio</a>
+								</li>
+                                <li><a>Cursos</a>
+                                <ul class="sub-menu">
+										<li><a href="{{ route('cursos.cursos') }}">Ver Todos los Cursos</a></li>
+										<li><a href="{{ route('cursos.categorias') }}">Ver Categorias</a></li>
+									</ul> 
+                                </li>
+                                <li><a  href="{{ route('historias.historias') }}">Historias de Exito</a></li>
+                                
+                                <li><a>Cuenta</a>
+                                    <ul class="sub-menu">
+                                        @guest
+                                            <li><a  href="{{ route('login') }}">Iniciar Sesión</a></li>
+                                            <li><a  href="{{ route('register') }}">Registrarme</a></li>
+                                        @else
+                                            @usuario
+                                            <li><a  href="{{route('usuario.dashboard')}}">Menu Usuario</a></li>
+                                            @endusuario
+                                            @admin
+                                            <li><a  href="{{route('admin.home.dashboard')}}">Menu Administrador</a></li>
+                                            @endadmin
+                                            <li>
+                                                <form id="logout" action="{{ route('logout') }}" method="POST">
+                                                @csrf
+                                                <a role="button" 
+                                                onclick="document.getElementById('logout').submit();">Cerrar Sesión</a>
+                                                </form>
+                                            </li>
+                                        @endguest
+                                        
+                                        </ul> 
+                                </li> 
+								<li><a href="about.html">Conocenos</a></li>
+								<li><a href="#">Comunidad</a>
+									<ul class="sub-menu">
+										<li><a href="{{ route('foros.todos') }}">Foros</a></li>
+									</ul>
+								</li>
+								<li><a href="contact.html">Contactanos</a></li>
+								<li><a href="https://www.etsy.com/mx/" target="_blank" rel="noopener noreferrer">Pagina
+										Oficial</a>
 
-{{--                        @tutor--}}
-{{--                        <a class="nav-link active">Menu Tutor</a>--}}
-{{--                        @endtutor--}}
+								</li>
+							</ul>
+						</nav>
+						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+						<div class="mobile-menu"></div>
+						<!-- menu end -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end header -->
 
-{{--                        @alumno--}}
-{{--                        <a class="nav-link active">Menu Alumno</a>--}}
-{{--                        @endalumno--}}
-{{--                    @endguest--}}
-{{--                </ul>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </nav>--}}
-{{--</header>--}}
-
-
-<!-- Fin de la barra de navegación -->
-
-
-<nav class="navbar navbar-expand-lg navbar-dark" style="padding: 0.5rem 0.7rem; background-color:#6E0E7D;">
-    <a class="navbar-brand" style="font-size: x-large" href="{{route('home.index')}}"><strong>My Learning Coach</strong></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav ms-auto">
-            <a class="nav-link active" href="{{ route('cursos.cursos') }}">Cursos</a>
-            <a class="nav-link active" href="{{ route('cursos.categorias') }}">Categorias</a>
-            <a class="nav-link active" href="{{ route('foros.todos') }}">Foros Publico</a>
-            <a class="nav-link active" href="{{ route('historias.historias') }}">Historias de Exito</a>
-            @guest
-                <a class="nav-link active" href="{{ route('login') }}">Iniciar Sesión</a>
-                <a class="nav-link active" href="{{ route('register') }}">Registrarme</a>
-            @else
-                @usuario
-                <a class="nav-link active" href="{{route('usuario.dashboard')}}">Menu Usuario</a>
-                @endusuario
-
-                @admin
-                <a class="nav-link active" href="{{route('admin.home.dashboard')}}">Menu Administrador</a>
-                @endadmin
-
-                <form id="logout" action="{{ route('logout') }}" method="POST">
-                    <a role="button" class="nav-link active"
-                       onclick="document.getElementById('logout').submit();">Cerrar Sesión</a>
-                    @csrf
-                </form>
-
-            @endguest
-        </div>
-    </div>
-</nav>
-<header class="masthead  text-white text-center py-3" style="background-color:#B014B5;">
-    <div class="container d-flex align-items-center flex-column">
-        <h2>@yield('subtitulo', 'Una plataforma de aprendizaje')</h2>
-    </div>
-</header>
-<!-- header -->
-
-{{--<div class="container my-4">--}}
-{{--   --}}
-{{--</div>--}}
-
+	
 
 
 @yield('contenido')
 
 
-<!-- Pie de pagina -->
-<footer class="bg-dark text-white text-center" style="margin-top: 10vh;">
-    <!-- 1erDiv -->
-    <div class="container p-4">
-        <!-- Social media -->
-        <section class="mb-4">
-            <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/Chisrra" role="button"
-               target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f">Ing.Donato</i></a>
+	<!-- logo carousel -->
+	<div class="logo-carousel-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="logo-carousel-inner">
+						<div class="single-logo-item">
+							<img src="{{ asset('/img/company-logos/logo.jpeg') }}" alt="">
+						</div>
+						<div class="single-logo-item">
+							<img src="{{ asset('/img/company-logos/logo-talento.png') }}" alt="">
+						</div>
+						<div class="single-logo-item">
+							<img src="{{ asset('/img/company-logos/etsy-logo.jpg') }}" alt="">
+						</div>
+						<div class="single-logo-item">
+							<img src="{{ asset('/img/company-logos/4.png') }}" alt="">
+						</div>
+						<div class="single-logo-item">
+							<img src="{{ asset('/img/company-logos/5.png') }}" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end logo carousel -->
 
-            <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/emilioenlaluna" role="button"
-               target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter">Ing.Luna</i></a>
-        </section>
-        <!-- Fin Social media -->
+	<!-- footer -->
+	<div class="footer-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-6">
+					<div class="footer-box about-widget">
+						<h2 class="widget-title">Acerca de Etsy</h2>
+						<p>Etsy es un mercado global de artículos únicos y creativos. Es el hogar de un universo de
+							artículos especiales y extraordinarios que abarca desde piezas artesanales únicas hasta
+							tesoros vintage.</p>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="footer-box get-in-touch">
+						<h2 class="widget-title">Contactanos</h2>
+						<ul>
+							<li>support@etsy.com</li>
+							<li>+52 551 222 3333</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="footer-box subscribe">
+						<h2 class="widget-title">Suscribete para más noticias</h2>
+						<p>Obtenga información relevante.</p>
+						<form action="index.html">
+							<input type="email" placeholder="Email">
+							<button type="submit"><i class="fas fa-paper-plane"></i></button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end footer -->
 
-        <!-- Texto -->
-        <section class="mb-4">
-            <p>
-                Este es un proyecto hecho para el talent hackathon 2022 para el track <i>MY LEARNING COACH Educación
-                    gratuita para estudiantes</i> para así combatir el rezago educativo y ayudar a todos los
-                estudiantes de educación básica, proporcionándoles esta aplicación web. </p>
-        </section>
-        <!-- Fin Texto -->
+	<!-- copyright -->
+	<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-12">
+					<p>Copyrights &copy; 2019 - <a href="https://imransdesign.com/">Imran Hossain</a>, All Rights
+						Reserved.<br>
+						Distributed By - <a href="https://themewagon.com/">Themewagon</a>
+					</p>
+				</div>
+				<div class="col-lg-6 text-right col-md-12">
+					<div class="social-icons">
+						<ul>
+							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end copyright -->
 
-        <!-- Links -->
-        <section class="">
-            <!--Div row-->
-            <div class="row align-items-center">
-                <!--Div column-->
-                <div class="col align-self-center">
-                    <h5 class="text-uppercase">Agradecimientos</h5>
+	<!-- jquery -->
+	<script src="{{ asset('/js/jquery-1.11.3.min.js') }}" ></script>
+	<!-- bootstrap -->
+	<script src="{{ asset('/bootstrap/js/bootstrap.min.js') }}"></script>
+	<!-- count down -->
+	<script src="{{ asset('/js/jquery.countdown.js') }}"></script>
+	<!-- isotope -->
+	<script src="{{ asset('/js/jquery.isotope-3.0.6.min.js') }}"></script>
+	<!-- waypoints -->
+	<script src="{{ asset('/js/waypoints.js') }}"></script>
+	<!-- owl carousel -->
+	<script src="{{ asset('/js/owl.carousel.min.js') }}"></script>
+	<!-- magnific popup -->
+	<script src="{{ asset('/js/jquery.magnific-popup.min.js') }}"></script>
+	<!-- mean menu -->
+	<script src="{{ asset('/js/jquery.meanmenu.min.js') }}"></script>
+	<!-- sticker js -->
+	<script src="{{ asset('/js/sticker.js') }}"></script>
+	<!-- main js -->
+	<script src="{{ asset('/js/main.js') }}"></script>
 
-                    <ul class="list-unstyled mb-0">
-                        <li>
-                            <a href="https://www.uaa.mx/portal/" class="text-white">Universidad Autonoma de
-                                Aguascalientes</a>
-                        </li>
-                        <li>
-                            <a href="https://hackathon.talent-network.org/tracks/my-learning-coach-educacion-gratuita-para-estudiantes/"
-                               class="text-white">MY LEARNING COACH</a>
-                        </li>
-                        <li>
-                            <a href="https://getbootstrap.com/docs/5.2/getting-started/introduction/"
-                               class="text-white">Bootstrap</a>
-                        </li>
-                    </ul>
-                </div>
-                <!--Fin Div column-->
-            </div>
-            <!--Fin Div row-->
-        </section>
-        <!-- Fin Links -->
-    </div>
-    <!-- Fin 1erDiv -->
-
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background: #192120;">
-        © 2022 Copyright:
-        <p class="text-white">CHICHARRÓN-TEK</p>
-    </div>
-    <!-- fin del Copyright -->
-</footer>
-<!-- fin del pie de pagina -->
-<script src="{{asset('js/bootstrap/bootstrap.bundle.min.js') }}"></script>
-<script src="{{asset('/js/jQuery/node_modules/jquery/dist/jquery.min.js') }}"></script>
-<!-- <script src="{{asset('/js/barraNavegacion.js') }}"></script> -->
 </body>
-</html>
 
+</html>

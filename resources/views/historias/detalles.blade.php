@@ -11,8 +11,8 @@
                 <div class="card-header">
                     Conozca esta historia...
                 </div>
-                <div class="card-title">
-                    <h6 class="display-6"><strong>{{ $detalles["titulo"] }}</strong></h6>
+                <div class="card-title text-center">
+                    <h6 class="display-4"><strong>{{ $detalles["titulo"] }}</strong></h6>
                 </div>
                 <div class="card-body">
                     @php echo html_entity_decode ($detalles["contenido"]) @endphp
