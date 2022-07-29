@@ -43,10 +43,6 @@ Route::get('/Material/{id}', 'App\Http\Controllers\ContenidoCursosController@mat
 Route::middleware(['auth', 'verified'])->group(function () {
 });
 
-/* *******************************************
- * CURSOS
- ******************************************** */
-
 
 
 
@@ -60,17 +56,7 @@ Route::middleware(['usuario'])->group(function () {
 
     Route::get('/usuario/miscursos', 'App\Http\Controllers\Usuario\Home\UsuarioHomeController@miscursos')->name('usuario.miscursos');
 
-    Route::get('/usuario/miscursos/curso/{id}', 'App\Http\Controllers\Usuario\Cursos\UsuarioCursosController@curso')->name('usuario.curso');
-
-    Route::get('/usuario/Leccion/{id}', 'App\Http\Controllers\Usuario\Cursos\UsuarioCursosController@leccion')->name("usuario.leccion");
-
-    Route::get('/usuario/miscursos/curso/leccion/foro/{id}', 'App\Http\Controllers\Usuario\Cursos\UsuarioCursosController@foroLeccion')->name('usuario.curso.foro.leccion');
-
-    Route::post('/usuario/miscursos/curso/leccion/foro/mensaje', 'App\Http\Controllers\Usuario\Cursos\UsuarioCursosController@enviarMensaje')->name('usuario.curso.foro.enviarMensaje');
-
-    Route::get('/usuario/miscursos/curso/leccion/{id}', 'App\Http\Controllers\Usuario\Cursos\UsuarioCursosController@leccion')->name('usuario.curso.leccion');
-
-    Route::post('/usuario/inscribir/{id}', 'App\Http\Controllers\Usuario\Cursos\UsuarioCursosController@inscribir')->name('usuario.inscribir');
+    Route::get('/usuario/inscribir/{id}', 'App\Http\Controllers\Usuario\Cursos\UsuarioCursosController@inscribir')->name('usuario.inscribir');
 
 
 });

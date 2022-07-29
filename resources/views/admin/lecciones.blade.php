@@ -50,28 +50,7 @@
 <div style="padding-top: 80px;"></div>
 
 
-<div class="container">
-    <div class="card mb-4">
-        <div class="card-header">
-            Crear Curso
-        </div>
-        <div class="card-body">
-            <form method="POST" action="{{route('admin.guardarleccion')}}">
-                @csrf
-                <input type="hidden" name="curso" value="{{$viewData["idCurso"]}}">
-                <label class="form-label">Nombre Lección</label>
-                <input type="text" class="form-control" name="nombre">
-                <label class="form-label">Fecha</label>
-                <input type="datetime-local" name="fecha" class="form-control">
-                <label class="form-label">Detalles</label>
-                <input type="text" name="detalles" class="form-control">
-                <br>
-                <button type="submit" class="btn btn-primary">Crear</button>
-            </form>
 
-        </div>
-    </div>
-</div>
 
 <div class="container">
     <h2 class="display-3">Lecciones del Curso</h2>
@@ -95,6 +74,27 @@
 
 
 <hr class="my-4">
+
+<div class="container">
+    <div class="card mb-4">
+        <div class="card-header">
+            Crear leccion para el Curso
+        </div>
+        <div class="card-body">
+            <form method="POST" action="{{route('admin.guardarleccion')}}">
+                @csrf
+                <input type="hidden" name="curso" value="{{$viewData["idCurso"]}}">
+                <label class="form-label">Nombre Lección</label>
+                <input type="text" class="form-control" name="nombre">
+                <label class="form-label">Detalles</label>
+                <input type="text" name="detalles" class="form-control">
+                <br>
+                <button type="submit" class="btn btn-primary">Crear</button>
+            </form>
+
+        </div>
+    </div>
+</div>
 
 
 <!-- pie -->

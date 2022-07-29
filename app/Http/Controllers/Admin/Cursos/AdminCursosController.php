@@ -16,7 +16,7 @@ class AdminCursosController extends Controller
     public function index()
     {
         $hijos = DB::table('cursos')
-            ->select('cursos.idCurso','cursos.NombreCurso', 'cursos.FechaInicio', 'cursos.FechaFin', 'cursos.imagenUrl', 'cursos.Visible')
+            ->select('cursos.idCurso','cursos.NombreCurso', 'cursos.detalles', 'cursos.imagenUrl', 'cursos.Visible')
             ->where('cursos.users_id', '=', Auth::id())
             ->get();
         $viewData = [];
@@ -29,8 +29,7 @@ class AdminCursosController extends Controller
     {
         DB::table('cursos')->insert([
             'NombreCurso' => $request->input('name'),
-            'FechaInicio' => $request->input('fechainicio'),
-            'FechaFin' => $request->input('fechafin'),
+            'detalles' => $request->input('detalles'),
             'Visible' => $request->input('visible'),
             'imagenUrl' => $request->input('url'),
             'Categoria_idCategoria' => $request->input('categoria'),

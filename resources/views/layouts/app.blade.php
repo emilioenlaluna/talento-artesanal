@@ -79,12 +79,13 @@
             <a class="nav-link active" href="{{ route('cursos.cursos') }}">Cursos</a>
             <a class="nav-link active" href="{{ route('cursos.categorias') }}">Categorias</a>
             <a class="nav-link active" href="{{ route('foros.todos') }}">Foros Publico</a>
+            <a class="nav-link active" href="{{ route('historias.historias') }}">Historias de Exito</a>
             @guest
                 <a class="nav-link active" href="{{ route('login') }}">Iniciar Sesión</a>
                 <a class="nav-link active" href="{{ route('register') }}">Registrarme</a>
             @else
                 @usuario
-                <a class="nav-link active" href="{{route('admin.home.dashboard')}}">Menu Usuario</a>
+                <a class="nav-link active" href="{{route('usuario.dashboard')}}">Menu Usuario</a>
                 @endusuario
 
                 @admin

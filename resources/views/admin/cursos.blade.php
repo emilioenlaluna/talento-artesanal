@@ -70,9 +70,7 @@
                             <a href="{{ route('admin.cursos.leccion', ['id'=> $curso["idCurso"]]) }}"
                                class="btn btn-cafe">Ir a Curso</a>
                             <h5 class="card-title">{{$curso["NombreCurso"]}}</h5>
-                            <p class="card-text">{{$curso["FechaInicio"]}}</p>
-                            <p class="card-text">{{$curso["FechaFin"]}}</p>
-
+                            <p class="card-text">{{$curso["detalles"]}}</p>
                             <p class="card-text">Estado:{{$curso["Visible"]}}</p>
 
                         </div>
@@ -127,23 +125,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="mb-3 row">
-                            <label for="fechainicio" class="col-lg-2 col-md-6 col-sm-12 col-form-label">Fecha
-                                Inicio:</label>
-                            <div class="col-lg-10 col-md-6 col-sm-12">
-                                <input name="fechainicio" id="fechainicio" type="datetime-local"
-                                       class="form-control" required>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="row">
                     <div class="col">
                         <div class="mb-3 row">
-                            <label for="fechafin" class="col-lg-2 col-md-6 col-sm-12 col-form-label">Fecha Fin:</label>
+                            <label for="fechafin" class="col-lg-2 col-md-6 col-sm-12 col-form-label">Detalles:</label>
                             <div class="col-lg-10 col-md-6 col-sm-12">
-                                <input name="fechafin" id="fechafin" type="datetime-local"
+                                <input name="detalles" id="detalles" type="text"
                                        class="form-control" required>
                             </div>
                         </div>
