@@ -11,7 +11,7 @@ class CursosController extends Controller
         $categorias = DB::table('categorias')
             ->simplePaginate(10);
         $viewData = [];
-        $viewData["titulo"] = "Categorias - My Learning Coach";
+        $viewData["titulo"] = "Categorias - Talento Artesanal";
         $viewData["subtitulo"] = "Lista de Categorias";
         return view('cursos.categorias', ["viewData" => $viewData, 'categorias' => $categorias]);
     }
@@ -21,7 +21,7 @@ class CursosController extends Controller
         $cursos = DB::table('Cursos')
             ->simplePaginate(10);
         $viewData = [];
-        $viewData["titulo"] = "Cursos - My Learning Coach";
+        $viewData["titulo"] = "Cursos - Talento Artesanal";
         $viewData["subtitulo"] = "Lista de Cursos";
         return view('cursos.cursos',["viewData" => $viewData, 'cursos' => $cursos]);
     }
@@ -32,7 +32,7 @@ class CursosController extends Controller
         $cursos = DB::table('Cursos')
             ->where('Categoria_idCategoria', $id)
             ->simplePaginate(10);
-        $viewData["titulo"] =  "Cursos en Categoria - My Learning Coach";
+        $viewData["titulo"] =  "Cursos en Categoria - Talento Artesanal";
         $viewData["subtitulo"] = "Cursos de categoria";
         return view('cursos.cursoscategoria',["viewData" => $viewData, 'cursos' => $cursos]);
     }
@@ -43,7 +43,7 @@ class CursosController extends Controller
         $curso = DB::table('Cursos')
             ->where('idCurso', $id)
             ->get();
-        $viewData["titulo"] = " - My Learning Coach";
+        $viewData["titulo"] = " Detalles - Talento Artesanal";
         $viewData["subtitulo"] = " - Información del Curso";
         $viewData["curso"] = $curso;
 
