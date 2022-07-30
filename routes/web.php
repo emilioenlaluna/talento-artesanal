@@ -23,6 +23,8 @@ Route::get('/', 'App\Http\Controllers\HomeController@index')->name("home.index")
 
 Route::get('/Nosotros', 'App\Http\Controllers\HomeController@nosotros')->name("home.nosotros");
 
+Route::get('/Contacto', 'App\Http\Controllers\HomeController@contacto')->name("home.contacto");
+
 Route::get('/Categorias', 'App\Http\Controllers\CursosController@categorias')->name("cursos.categorias");
 
 Route::get('/Cursos', 'App\Http\Controllers\CursosController@cursos')->name("cursos.cursos");

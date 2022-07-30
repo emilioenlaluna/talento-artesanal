@@ -1,6 +1,20 @@
 @extends('layouts.app')
 
 @section('contenido')
+
+<div class="breadcrumb-section breadcrumb-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+                <div class="breadcrumb-text">
+                    <p>Crea una cuenta</p>
+                    <h1>Registrese</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
     <div class="container" style="margin-top: 2vh">
         <div  class="row justify-content-center align-content-center" style="min-height: 65vh; width: 100%">
             <div class="col col-md-9">

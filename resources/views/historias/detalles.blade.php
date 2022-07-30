@@ -3,9 +3,20 @@
 @section('subtitulo', $viewData["subtitulo"])
 @section('contenido')
 
-    <div class="container my-4">
-        <h2 class="display-3">Una historia de Éxito</h2>
+<div class="breadcrumb-section breadcrumb-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+                <div class="breadcrumb-text">
+                    <p>Experiencias Reales</p>
+                    <h1>Una Historia de Éxito</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
+    <div class="container my-4">
         @foreach($viewData["historia"] as $detalles)
             <div class="card">
                 <div class="card-header">

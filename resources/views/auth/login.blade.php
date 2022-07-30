@@ -1,5 +1,18 @@
 @extends('layouts.app')
 
+<div class="breadcrumb-section breadcrumb-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+                <div class="breadcrumb-text">
+                    <p>Acceder a su cuenta</p>
+                    <h1>Iniciar Sesión</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 @section('contenido')
     <div class="contenedor">
         <div class="row justify-content-center align-content-center" style="min-height: 45vh; width: 100%">
@@ -39,12 +52,16 @@
                                 </div>
                             </div>
 
-                            <div class="form-check" style="margin: 1vh 15px 2vh">
-                                <label class="form-check-label" for="remember">
-                                    {{ __('Mantener Sesión Activa') }}
-                                </label>
-                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                            <div class="row">
+                                <label class="col-md-6 col-form-label" for="remember">
+                                    {{ __('Mantener Sesión Activa') }} </label>
+
+                                <div class="col-md-6">
+                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                    
+                                </div>
                             </div>
+
 
                             <div class="row row-cols-1 row-cols-sm-2">
                                 <div class="col">

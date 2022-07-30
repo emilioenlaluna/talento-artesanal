@@ -11,7 +11,6 @@
 
 
 
-    !-- breadcrumb-section -->
     <div class="breadcrumb-section breadcrumb-bg">
         <div class="container">
             <div class="row">
@@ -24,9 +23,8 @@
             </div>
         </div>
     </div>
-    <!-- end breadcrumb section -->
 
-    
+
     <hr class="my-4">
 
     <!-- products -->
@@ -67,55 +65,71 @@
     <!-- end products -->
 
     <hr class="my-4">
-  
-    <div class="container text-center">
-        <h4 class="display-4">Agrega tu historia</h4>
-        @guest
-            <a href="{{ route('login') }}">Inicie Sesión para Contar su Historia</a>
-        @else
+
+
+
+    <div class="breadcrumb-section breadcrumb-bg">
+        <div class="container">
             <div class="row">
-                <div class="card">
-
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('historias.contarHistoria') }}" enctype="multipart/form-data">
-                            @csrf
-
-                            <div class="row row-cols-1 row-cols-sm-2">
-                                <div class="col">
-                                    <div class="mb-3 row">
-                                        <label for="titulo" class="col-md-auto col-form-label">
-                                            Titulo:</label>
-                                        <div class="col">
-                                            <input name="titulo" id="titulo" type="text" class="form-control" required
-                                                maxlength="45">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="mb-3 row">
-                                        <label for="mensaje" class="col-md-auto col-form-label">Url Imagen:</label>
-                                        <div class="col">
-                                            <input name="url" id="url" class="form-control" required>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <br>
-                            <textarea class="form-control" id="summernote" name="contenido" style=".note-group-select-from-files {display: none;}"></textarea>
-                            <br>
-
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="breadcrumb-text">
+                        <h4 class="display-4">Agrega tu historia</h4>
+                        @guest
+                            <a href="{{ route('login') }}">Inicie Sesión para Contar su Historia</a>
+                        @else
                             <div class="row">
-                                <button type="submit" class="btn btn-success col" style=" font-size: large;"><b>Publicar Mi
-                                        Historia</b></button>
-                            </div>
-                        </form>
+                                <div class="card">
 
+                                    <div class="card-body">
+                                        <form method="POST" action="{{ route('historias.contarHistoria') }}"
+                                            enctype="multipart/form-data">
+                                            @csrf
+
+                                            <div class="row row-cols-1 row-cols-sm-2">
+                                                <div class="col">
+                                                    <div class="mb-3 row">
+                                                        <label for="titulo" class="col-md-auto col-form-label">
+                                                            Titulo:</label>
+                                                        <div class="col">
+                                                            <input name="titulo" id="titulo" type="text"
+                                                                class="form-control" required maxlength="45">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="mb-3 row">
+                                                        <label for="mensaje" class="col-md-auto col-form-label">Url
+                                                            Imagen:</label>
+                                                        <div class="col">
+                                                            <input name="url" id="url" class="form-control" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <br>
+                                            <textarea class="form-control" id="summernote" name="contenido" style=".note-group-select-from-files {display: none;}"></textarea>
+                                            <br>
+
+                                            <div class="row">
+                                                <button type="submit" class="btn btn-success col"
+                                                    style=" font-size: large;"><b>Publicar Mi
+                                                        Historia</b></button>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        @endguest
                     </div>
                 </div>
             </div>
-        @endguest
+        </div>
     </div>
+
+
+
 
 
 
