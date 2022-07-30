@@ -38,16 +38,6 @@
 
 
             </div>
-
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="pagination-wrap">
-                        @if (!empty($cursos))
-                            {{ $cursos->links() }}
-                        @endif
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     <!-- end products -->

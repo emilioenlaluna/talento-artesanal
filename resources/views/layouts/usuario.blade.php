@@ -9,7 +9,7 @@
     <link href="{{ asset('/css/admin.css') }}" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link href="{{ asset('/img/icon.png') }}" rel="icon"/>
-    <title>@yield('title', 'My Learning Coach')</title>
+    <title>@yield('title', 'Talento Artesanal')</title>
 </head>
 
 <body>
