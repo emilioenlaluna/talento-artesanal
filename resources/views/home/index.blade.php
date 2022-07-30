@@ -109,7 +109,90 @@
 	</div>
 	<!-- end features list section -->
 
-	<!-- Poner lo que es ser un vendedor en Etsy y porque te beneficiara -->
+	
+
+    <!-- advertisement section -->
+    <div class="abt-section mb-150">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <div class="abt-bg">
+                        <img src="{{ asset('/img/aprende.jpg') }}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="abt-text">
+                        <p class="top-sub">El conocimiento es poder</p>
+                        <h2>Aprende con nuestros <span class="orange-text">Cursos</span></h2>
+                        <p>Para todos los artesanos mexicanos para que así
+                            se animen y puedan empezar su tienda digital. Cada curso contara con varias
+                            lecciones que permitirán al usuario aprender estrategias de venta, trato con
+                            los clientes y las mejores recomendaciones para publicar un anuncio.</p>
+                        <a href="{{ route('cursos.cursos') }}" class="boxed-btn mt-4">Ir a Cursos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end advertisement section -->
+
+    <!-- advertisement section -->
+    <div class="abt-section mb-150">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <div class="abt-bg">
+                        <img src="{{ asset('/img/foros.jpg') }}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="abt-text">
+                        <p class="top-sub">El que no habla, Dios no lo oye...</p>
+                        <h2>Contactate con otros artesanos:<span class="orange-text"> Foros</span></h2>
+                        <p>Donde los vendedores de toda la plataforma Etsy pueden
+                            hacerse darse consejos o apoyo por medio de preguntas y respuestas que
+                            contendrán los foros para así hacer una comunidad de vendedores.
+                        </p>
+                        <p>Permite a los nuevos vendedores obtener consejos y ayudas de los
+                            vendedores veteranos o con mayor capacitación de la plataforma para
+                            así impulsar sus tiendas digitales.</p>
+                        <a href="{{ route('foros.todos') }}" class="boxed-btn mt-4">Ir a Foros</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end advertisement section -->
+
+    <!-- advertisement section -->
+    <div class="abt-section mb-150">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <div class="abt-bg">
+                        <img src="{{ asset('/img/historiasexito.jpg') }}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="abt-text">
+                        <p class="top-sub">Cuéntanos tu historia...</p>
+                        <h2>Comparte tu historia: <span class="orange-text">Historias de Éxito</span></h2>
+                        <p>Historias de éxito de todos los vendedores registrados en la plataforma
+                            pueden publicar tras haber realizado una venta y se allá entregado
+                            exitosamente. </p>
+                        <p>Permite a nuestros vendedores compartir sus éxitos de venta para
+                            seguir sintiéndose motivados.</p>
+                        <p>Da confianza a posibles nuevos vendedores a registrarse en la
+                            plataforma al ver que nuestros usuarios están impulsando sus
+                            negocios a través de la página de Etsy.</p>
+                        <a href="{{ route('historias.historias') }}" class="boxed-btn mt-4">Ir a Historias</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end advertisement section -->
+
 
 	<!-- product section -->
 	<div class="product-section mt-150 mb-150">
