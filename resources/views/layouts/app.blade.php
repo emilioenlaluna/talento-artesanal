@@ -17,23 +17,23 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
 	<!-- fontawesome -->
-	<link rel="stylesheet" href="{{ asset('/css/all.min.css') }}">
+	<link rel="stylesheet" href="{{ secure_asset('/css/all.min.css') }}">
 	<!-- bootstrap -->
-	<link rel="stylesheet" href="{{ asset('/bootstrap/css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ secure_asset('/bootstrap/css/bootstrap.min.css') }}">
 	<!-- owl carousel -->
-	<link rel="stylesheet" href="{{ asset('/css/owl.carousel.css') }}">
+	<link rel="stylesheet" href="{{ secure_asset('/css/owl.carousel.css') }}">
 	<!-- magnific popup -->
-	<link rel="stylesheet" href="{{ asset('/css/magnific-popup.css') }}">
+	<link rel="stylesheet" href="{{ secure_asset('/css/magnific-popup.css') }}">
 	<!-- animate css -->
-	<link rel="stylesheet" href="{{ asset('/css/animate.css') }}">
+	<link rel="stylesheet" href="{{ secure_asset('/css/animate.css') }}">
 	<!-- mean menu css -->
-	<link rel="stylesheet" href="{{ asset('/css/meanmenu.min.css') }}">
+	<link rel="stylesheet" href="{{ secure_asset('/css/meanmenu.min.css') }}">
 	<!-- main style -->
-	<link rel="stylesheet" href="{{ asset('/css/main.css') }}">
+	<link rel="stylesheet" href="{{ secure_asset('/css/main.css') }}">
 	<!-- responsive -->
-	<link rel="stylesheet" href="{{ asset('/css/responsive.css') }}">
+	<link rel="stylesheet" href="{{ secure_asset('/css/responsive.css') }}">
 	<!-- accesibilidad -->
-	<link rel="stylesheet" href="{{ asset('/css/jbility.min.css') }}">
+	<link rel="stylesheet" href="{{ secure_asset('/css/jbility.min.css') }}">
 	
 
 </head>
@@ -69,7 +69,7 @@
 				<!-- logo -->
 				<div class=" col-sm-auto site-logo">
 					<a href="{{ route('home.index') }}">
-						<img src="{{ asset('/img/logo.png') }}" height="65" width="100" alt="Logo de talento artesanal">
+						<img src="{{ secure_asset('/img/logo.png') }}" height="65" width="100" alt="Logo de talento artesanal">
 					</a>
 				</div>
 				<!-- logo -->
@@ -128,7 +128,7 @@
 							</ul>
 						</nav>
 						<div class="acess-container">
-							<div id="jbbutton" class="balloon" title="Accessibility"><span class="balloontext">Accesibilidad</span><img src="{{ asset('/img/acessc50.png') }}"></div>
+							<div id="jbbutton" class="balloon" title="Accessibility"><span class="balloontext">Accesibilidad</span><img src="{{ secure_asset('/img/acessc50.png') }}"></div>
 							<div id="acess-icons">
 								<div class="acess-icon balloon"><span class="balloontext">Contraste</span><img id="contrast" src="{{ asset('/img/contraste40.png') }}"/></div>
 								<div class="acess-icon balloon"><span class="balloontext">Aumetar Tamaño letra</span><img id="increaseFont" src="{{ asset('/img/fontsma40.png') }}"/></div>
@@ -160,19 +160,19 @@
 				<div class="col-lg-12">
 					<div class="logo-carousel-inner">
 						<div class="single-logo-item">
-							<img src="{{ asset('/img/company-logos/logo.jpeg') }}" alt="">
+							<img src="{{ secure_asset('/img/company-logos/logo.jpeg') }}" alt="">
 						</div>
 						<div class="single-logo-item">
-							<img src="{{ asset('/img/company-logos/logo-talento.png') }}" alt="">
+							<img src="{{ secure_asset('/img/company-logos/logo-talento.png') }}" alt="">
 						</div>
 						<div class="single-logo-item">
-							<img src="{{ asset('/img/company-logos/etsy-logo.jpg') }}" alt="">
+							<img src="{{ secure_asset('/img/company-logos/etsy-logo.jpg') }}" alt="">
 						</div>
 						<div class="single-logo-item">
-							<img src="{{ asset('/img/company-logos/4.png') }}" alt="">
+							<img src="{{ secure_asset('/img/company-logos/4.png') }}" alt="">
 						</div>
 						<div class="single-logo-item">
-							<img src="{{ asset('/img/company-logos/5.png') }}" alt="">
+							<img src="{{ secure_asset('/img/company-logos/5.png') }}" alt="">
 						</div>
 					</div>
 				</div>
@@ -242,28 +242,28 @@
 	<!-- end copyright -->
 
 	<!-- jquery -->
-	<script src="{{ asset('/js/jquery-1.11.3.min.js') }}" ></script>
+	<script src="{{ secure_asset('/js/jquery-1.11.3.min.js') }}" ></script>
 	<!-- bootstrap -->
-	<script src="{{ asset('/bootstrap/js/bootstrap.min.js') }}"></script>
+	<script src="{{ secure_asset('/bootstrap/js/bootstrap.min.js') }}"></script>
 	<!-- count down -->
-	<script src="{{ asset('/js/jquery.countdown.js') }}"></script>
+	<script src="{{ secure_asset('/js/jquery.countdown.js') }}"></script>
 	<!-- isotope -->
-	<script src="{{ asset('/js/jquery.isotope-3.0.6.min.js') }}"></script>
+	<script src="{{ secure_asset('/js/jquery.isotope-3.0.6.min.js') }}"></script>
 	<!-- waypoints -->
-	<script src="{{ asset('/js/waypoints.js') }}"></script>
+	<script src="{{ secure_asset('/js/waypoints.js') }}"></script>
 	<!-- owl carousel -->
-	<script src="{{ asset('/js/owl.carousel.min.js') }}"></script>
+	<script src="{{ secure_asset('/js/owl.carousel.min.js') }}"></script>
 	<!-- magnific popup -->
-	<script src="{{ asset('/js/jquery.magnific-popup.min.js') }}"></script>
+	<script src="{{ secure_asset('/js/jquery.magnific-popup.min.js') }}"></script>
 	<!-- mean menu -->
-	<script src="{{ asset('/js/jquery.meanmenu.min.js') }}"></script>
+	<script src="{{ secure_asset('/js/jquery.meanmenu.min.js') }}"></script>
 	<!-- sticker js -->
-	<script src="{{ asset('/js/sticker.js') }}"></script>
+	<script src="{{ secure_asset('/js/sticker.js') }}"></script>
 	<!-- main js -->
-	<script src="{{ asset('/js/main.js') }}"></script>
+	<script src="{{ secure_asset('/js/main.js') }}"></script>
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script type="text/javascript" src="{{ asset('/js/jbility.min.js') }}"></script>
+<script type="text/javascript" src="{{ secure_asset('/js/jbility.min.js') }}"></script>
 
 </body>
 
