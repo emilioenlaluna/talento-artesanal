@@ -16,7 +16,7 @@
 								<h1>Vende tus artesanias en Etsy</h1>
 								<div class="hero-btns">
 									<a href="https://www.etsy.com/sell" class="boxed-btn">¡Empezar!</a>
-									<a href="#" class="bordered-btn">Preguntas frecuentes</a>
+									<a href="{{ route('home.nosotros') }}" class="bordered-btn">Preguntas frecuentes</a>
 								</div>
 							</div>
 						</div>
@@ -34,8 +34,8 @@
 								<p class="subtitle">¿Quieres aprender a usar Etsy?</p>
 								<h1>Aprende a usar Etsy y sacale el mayor provecho</h1>
 								<div class="hero-btns">
-									<a href="#" class="boxed-btn">¡Aprender!</a>
-									<a href="#" class="bordered-btn">¿Cómo empezar?</a>
+									<a href="{{ route('cursos.cursos') }}" class="boxed-btn">¡Aprender!</a>
+									<a href="{{ route('cursos.cursos') }}" class="bordered-btn">¿Cómo empezar?</a>
 								</div>
 							</div>
 						</div>
@@ -53,8 +53,8 @@
 								<p class="subtitle">Siempre en contacto</p>
 								<h1>Participa en charlas con otros vendedores</h1>
 								<div class="hero-btns">
-									<a href="#" class="boxed-btn">Charlas</a>
-									<a href="#" class="bordered-btn">Preguntas</a>
+									<a href="{{ route('foros.todos') }}" class="boxed-btn">Charlas</a>
+									<a href="{{ route('foros.todos') }}" class="bordered-btn">Preguntas</a>
 								</div>
 							</div>
 						</div>
