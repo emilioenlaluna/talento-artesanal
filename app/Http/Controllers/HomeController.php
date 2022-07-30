@@ -11,7 +11,7 @@ class HomeController extends Controller
     public function index()
     {
         $viewData = [];
-        $viewData["titulo"] = "Inicio - My Learning Coach";
+        $viewData["titulo"] = "Inicio - Talento Artesanal";
         $viewData["subtitulo"] = "Etsy";
         return view('home.index')->with("viewData", $viewData);
     }
