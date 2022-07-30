@@ -1,54 +1,27 @@
-<!DOCTYPE html>
-<html lang="es">
+@extends('layouts.app')
+@section('contenido')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="{{ asset('/img/icon.png') }}">
-    <link rel="stylesheet" href="{{ asset('/css/bootstrap/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/barraNavegacionCursos.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/Cursos/misCursos.css') }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cursos </title>
 
-</head>
-
-<body>
-<!-- barra de navegacion cursos -->
-
-<header>
-    <nav id="navP" class="navbar fixed-top navbar-expand-md navbar-dark scrolling-navbar"
-         style="background-color: #01684A;">
-        <div class="container-fluid">
-            <a class="navbar-brand ">
-                <img id="logo" src="{{ asset('/img/icon.png') }}" alt="Icono de la pagina"
-                     class="d-inline-block align-text-center" style="margin-bottom: 3%;">
-                <strong class="titulo"></strong>
-            </a>
-            <button class="navbar-toggler collapsed" id="botonCollapse" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('cursos.cursos') }}">Cursos</a>
-                    </li>
-                </ul>
+    <!-- breadcrumb-section -->
+    <div class="breadcrumb-section breadcrumb-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="breadcrumb-text">
+                        <p>Cada Curso se divide en lecciones.</p>
+                        <h1>Lecciones del Curso</h1>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
-</header>
-<!-- fin barra de navegacion cursos -->
+    </div>
+    <!-- end breadcrumb section -->
 
-<div style="padding-top: 80px;"></div>
+    <!-- products -->
+    <div class="product-section mt-150 mb-150">
+        <div class="container">
 
-
-<div class="container">
-    <h2 class="display-3">Lecciones del Curso</h2>
-    <div class="accordion" id="accordionPanelsStayOpenExample">
-        @foreach ($viewData["lecciones"] as $leccion)
+            @foreach ($viewData["lecciones"] as $leccion)
             <div class="card">
                 <div class="card-header">
                     {{$leccion["NombreLeccion"]}}
@@ -57,26 +30,15 @@
                     <h5>{{$leccion["NombreLeccion"]}}</h5>
                     <p>{{$leccion["FechaLeccion"]}}</p>
                     <p>{{$leccion["Detalles"]}}</p>
-                    <a  class="btn btn-cafe" href="{{route('cursos.material',['id'=>$leccion["idLeccion"]])}}">Ver Contenido Leccion</a>
+                    <a  class="btn btn-dark" href="{{route('cursos.material',['id'=>$leccion["idLeccion"]])}}">Ver Contenido Leccion</a>
                 </div>
             </div>
             <hr class="my-4">
         @endforeach
+
+        </div>
     </div>
-</div>
+    <!-- end products -->
 
+@endsection
 
-<hr class="my-4">
-
-
-<!-- pie -->
-<div id="piecito">
-    <h8><b>CHICHARRON-TEK</b></h8>
-</div>
-<!-- fin del pie -->
-<script src="{{ asset('js/jQuery/node_modules/jquery/dist/jquery.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('js/barraNavegacion.js') }}" type="text/javascript"></script>
-</body>
-
-</html>

@@ -128,11 +128,11 @@
 							</ul>
 						</nav>
 						<div class="acess-container">
-							<div id="jbbutton" class="balloon" title="Accessibility"><span class="balloontext">Accesibilidad</span><img src="img/acessc50.png"></div>
+							<div id="jbbutton" class="balloon" title="Accessibility"><span class="balloontext">Accesibilidad</span><img src="{{ asset('/img/acessc50.png') }}"></div>
 							<div id="acess-icons">
-								<div class="acess-icon balloon"><span class="balloontext">Contraste</span><img id="contrast" src="img/contraste40.png"/></div>
-								<div class="acess-icon balloon"><span class="balloontext">Aumetar Tamaño letra</span><img id="increaseFont" src="img/fontsma40.png"/></div>
-								<div class="acess-icon balloon"><span class="balloontext">Decrementar tamaño letra</span><img id="decreaseFont" src="img/fontsme40.png"/></div>
+								<div class="acess-icon balloon"><span class="balloontext">Contraste</span><img id="contrast" src="{{ asset('/img/contraste40.png') }}"/></div>
+								<div class="acess-icon balloon"><span class="balloontext">Aumetar Tamaño letra</span><img id="increaseFont" src="{{ asset('/img/fontsma40.png') }}"/></div>
+								<div class="acess-icon balloon"><span class="balloontext">Decrementar tamaño letra</span><img id="decreaseFont" src="{{ asset('/img/fontsme40.png') }}"/></div>
 								<div class="acess-icon balloon" id="google_translate_element"><span class="balloontext">Cambiar Idioma</span></div>
 							</div>
 						</div>

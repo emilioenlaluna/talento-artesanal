@@ -3,10 +3,10 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            Alumno
+            Usuario
         </div>
         <div class="card-body">
-            Bienvenido al panel del alumno
+            Bienvenido al panel del Usuario
         </div>
     </div>
 @endsection

@@ -30,8 +30,7 @@
     <!-- sidebar -->
     <div class="col content-grey">
         <nav class="p-3 shadow text-end">
-            <span class="profile-font">Maestro</span>
-            <img class="img-profile rounded-circle" src="{{ asset('/img/profile.svg') }}">
+            <span class="profile-font">Administrador</span>
         </nav>
 
         <div class="g-0 m-5">
@@ -46,7 +45,7 @@
         <small>
             Copyright - <a class="text-reset fw-bold text-decoration-none" target="_blank"
             >
-                Chicharron-Tek
+                The Honey
             </a>
         </small>
     </div>
